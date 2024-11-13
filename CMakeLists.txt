@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION ${CMAKE_VERSION})
 
 project(bolt)
 
+add_definitions(-DSDL_MAIN_HANDLED)
+
 include_directories(
 	src
 	contrib/cl-windows-x86_64/include
