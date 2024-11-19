@@ -41,6 +41,7 @@ add_library(bolt
   src/bolt/Resource.cpp src/bolt/Resource.h
   src/bolt/Resources.cpp src/bolt/Resources.h
   src/bolt/Texture.h
+  src/bolt/Model.h
 )
 
 target_link_libraries(bolt rend)
