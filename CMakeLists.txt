@@ -38,6 +38,9 @@ add_library(bolt
   src/bolt/Component.h src/bolt/Component.cpp
   src/bolt/TriangleRenderer.h src/bolt/TriangleRenderer.cpp
   src/bolt/Window.cpp src/bolt/Window.h
+  src/bolt/Resource.cpp src/bolt/Resource.h
+  src/bolt/Resources.cpp src/bolt/Resources.h
+  src/bolt/Texture.h
 )
 
 target_link_libraries(bolt rend)

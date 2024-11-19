@@ -9,7 +9,6 @@
 
 namespace rend
 {
-
 Texture::Texture()
 {
   size(256, 256);
