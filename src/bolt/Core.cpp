@@ -1,6 +1,7 @@
 #include "Core.h"
 #include "Entity.h"
 #include "Window.h"
+#include "Transform.h"
 #include <iostream>
 
 struct window;
@@ -22,6 +23,7 @@ namespace bolt
 		rtn->m_self = rtn;
 		rtn->m_core = m_self;
 		m_entities.push_back(rtn);
+		rtn->add_component<Transform>();
 
 		std::cout << rtn->m_core.lock().get() << std::endl;
 		return rtn;

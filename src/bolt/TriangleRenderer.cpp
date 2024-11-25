@@ -1,4 +1,7 @@
 #include "TriangleRenderer.h"
+#include "Entity.h"
+#include "Transform.h"
+#include <stdexcept>
 
 namespace bolt
 {
@@ -6,10 +9,13 @@ namespace bolt
 	{
 		printf("Rendering\n");
 
+		glm::mat4 model(1.0f);
+		model = getEntity()->get_component<Transform>()->model();
+
 		m_shader.attribute("a_Position", *m_mesh.positions());
 		m_shader.attribute("a_TexCoord", *m_mesh.texcoords());
 		m_shader.uniform("u_Projection", rend::perspective(45.0f, 1.0f, 0.1f, 100.0f));
-		m_shader.uniform("u_Model", rend::translate(rend::mat4(1.0f), rend::vec3(0.0f, 0.0f, -5.0f)));
+		m_shader.uniform("u_Model", model);
 		m_shader.render();
 	}
 
