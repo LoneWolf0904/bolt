@@ -30,7 +30,7 @@ int main()
 
 	std::shared_ptr<Entity> ent = core->add_entity();
 	ent->add_component<TriangleRenderer>();
-	ent->get_component<Transform>()->setPosition(rend::vec3(5, 0, -10));
+	ent->get_component<Transform>()->setPosition(rend::vec3(0, 0, -10));
 	ent->get_component<Transform>()->setScale(rend::vec3(5.0f));
 
 	core->start();

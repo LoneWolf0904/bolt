@@ -47,6 +47,11 @@ namespace bolt
 				if (event.type == SDL_KEYDOWN)
 				{
 					sys::out("Event\n");
+					SDL_KeyboardEvent keyEvent = event.key;
+					if (keyEvent.keysym.sym == SDLK_w)
+					{
+						
+					}
 				}
 			}
 
