@@ -1,9 +1,11 @@
 #include <iostream>
-#include "Resources.h"
 #include <rend/rend.h>
+#include "Resource.h"
 
 namespace bolt
 {
+	struct Resource;
+
 	struct Texture : Resource
 	{
 		void onLoad();

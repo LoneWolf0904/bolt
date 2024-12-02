@@ -50,7 +50,8 @@ namespace bolt
 					SDL_KeyboardEvent keyEvent = event.key;
 					if (keyEvent.keysym.sym == SDLK_w)
 					{
-						
+						std::cout << "W is pressed" << std::endl;
+
 					}
 				}
 			}

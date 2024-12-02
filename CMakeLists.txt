@@ -40,9 +40,10 @@ add_library(bolt
   src/bolt/Window.cpp src/bolt/Window.h
   src/bolt/Resource.cpp src/bolt/Resource.h
   src/bolt/Resources.cpp src/bolt/Resources.h
-  src/bolt/Texture.h
+  src/bolt/Texture.h src/bolt/Texture.cpp
   src/bolt/Model.h
   src/bolt/Transform.h src/bolt/Transform.cpp
+  src/bolt/Keyboard.h src/bolt/Keyboard.cpp
 )
 
 target_link_libraries(bolt rend)
