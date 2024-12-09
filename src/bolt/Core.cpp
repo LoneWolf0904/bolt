@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "Window.h"
 #include "Transform.h"
+#include "Keyboard.h"
 #include <iostream>
 
 struct window;
@@ -47,11 +48,23 @@ namespace bolt
 				if (event.type == SDL_KEYDOWN)
 				{
 					sys::out("Event\n");
-					SDL_KeyboardEvent keyEvent = event.key;
-					if (keyEvent.keysym.sym == SDLK_w)
-					{
-						std::cout << "W is pressed" << std::endl;
+					//SDL_KeyboardEvent keyEvent = event.key;
 
+					m_keyboard->pressedKeys.push_back(event.key.keysym.sym);
+					m_keyboard->keys.push_back(event.key.keysym.sym);
+				}
+
+				if (event.type == SDL_KEYUP)
+				{
+					m_keyboard->releasedKeys.push_back(event.key.keysym.sym);
+
+					for (int i = 0; i < m_keyboard->keys.size(); ++i)
+					{
+						if (m_keyboard->keys[i] == event.key.keysym.sym)
+						{
+							m_keyboard->keys.erase(m_keyboard->keys.begin() + i);
+							--i;
+						}
 					}
 				}
 			}

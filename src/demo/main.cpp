@@ -3,24 +3,28 @@
 
 using namespace bolt;
 
-//struct Test : Component
-//
-//{
+struct Test : Component
+
+{
 //	void on_initialize()
 //	{
 //		printf("Player::initialize\n");
 //	}
 //
-//	void on_tick()
-//	{
-//		printf("Player::tick\n");
-//	}
-//
-//	void on_render()
-//	{
-//		printf("Player::render\n");
-//	}
-//};
+	void on_tick()
+	{
+		printf("Player::tick\n");
+		/*if (getEntity()->getCore()->getKeyboard()->isKey(SDLK_a))
+		{
+			std::cout << "A is pressed" << std::endl;
+		}*/
+	}
+
+	void on_render()
+	{
+		printf("Player::render\n");
+	}
+};
 
 int main()
 {

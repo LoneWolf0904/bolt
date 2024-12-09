@@ -4,6 +4,7 @@
 
 namespace bolt
 {
+	struct Keyboard;
 	struct Entity;
 	struct Window;
 
@@ -18,6 +19,7 @@ namespace bolt
 		std::shared_ptr<Window> m_window;
 		std::vector<std::shared_ptr<Entity> > m_entities;
 		std::weak_ptr<Core> m_self;
+		std::shared_ptr<Keyboard> m_keyboard;
 		bool m_running;
 	};
 
