@@ -13,6 +13,7 @@ namespace bolt
 	{
 		std::shared_ptr<Core> rtn = std::make_shared<Core>();
 		rtn->m_window = std::make_shared<Window>();
+		rtn->m_keyboard = std::make_shared<Keyboard>();
 		rtn->m_self = rtn;
 		return rtn;
 	}
@@ -84,7 +85,14 @@ namespace bolt
 				m_entities.at(ei)->render();
 			}
 
+			m_keyboard->pressedKeys.clear();
+			m_keyboard->releasedKeys.clear();
 			SDL_Rend_SwapWindow(m_window->m_raw);
 		}
+	}
+
+	std::shared_ptr<Keyboard> Core::getKeyboard()
+	{
+		return m_keyboard;
 	}
 }

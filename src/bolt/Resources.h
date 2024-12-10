@@ -17,7 +17,7 @@ namespace bolt
 				// Return it if found
 				if (m_resources.at(i)->getPath() == _path)
 				{
-					return m_resources.at(i);
+					return std::dynamic_pointer_cast(m_resources.at(i));
 				}
 			}
 

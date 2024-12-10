@@ -34,6 +34,8 @@ namespace bolt
 			throw std::runtime_error("Failed to find component");
 		}
 
+		std::shared_ptr<Core> getCore();
+
 	private:
 		friend struct bolt::Core;
 		std::weak_ptr<Core> m_core;

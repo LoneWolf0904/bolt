@@ -13,29 +13,34 @@ struct Test : Component
 //
 	void on_tick()
 	{
-		printf("Player::tick\n");
-		/*if (getEntity()->getCore()->getKeyboard()->isKey(SDLK_a))
+		//printf("Player::tick\n");
+		if (getEntity()->getCore()->getKeyboard()->isKeyPressed(SDLK_a))
 		{
 			std::cout << "A is pressed" << std::endl;
-		}*/
+		}
 	}
 
-	void on_render()
+	/*void on_render()
 	{
 		printf("Player::render\n");
-	}
+	}*/
 };
 
 int main()
 {
+
 	std::cout << "Hello World!" << std::endl;
 
 	std::shared_ptr<Core> core = Core::initialize();
+	
 
 	std::shared_ptr<Entity> ent = core->add_entity();
 	ent->add_component<TriangleRenderer>();
 	ent->get_component<Transform>()->setPosition(rend::vec3(0, 0, -10));
 	ent->get_component<Transform>()->setScale(rend::vec3(5.0f));
+
+	std::shared_ptr<Entity> ent1 = core->add_entity();
+	ent1->add_component<Test>();
 
 	core->start();
 	//core->add_entity();

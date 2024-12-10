@@ -18,4 +18,9 @@ namespace bolt
 			m_components.at(ci)->render();
 		}
 	}
+
+	std::shared_ptr<Core> Entity::getCore()
+	{
+		return m_core.lock();
+	}
 }

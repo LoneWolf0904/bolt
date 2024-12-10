@@ -15,6 +15,7 @@ namespace bolt
 		std::shared_ptr<Entity> add_entity();
 		std::shared_ptr<Window> window() const;
 		void update();
+		std::shared_ptr<Keyboard> getKeyboard();
 	private:
 		std::shared_ptr<Window> m_window;
 		std::vector<std::shared_ptr<Entity> > m_entities;

@@ -6,5 +6,6 @@
 #include "Component.h"
 #include "TriangleRenderer.h"
 #include "Transform.h"
+#include "Keyboard.h"
 
 #endif // !BOLT_BOLT_H

@@ -7,7 +7,7 @@ namespace bolt
 {
 	void TriangleRenderer::on_render()
 	{
-		printf("Rendering\n");
+		//printf("Rendering\n");
 
 		glm::mat4 model(1.0f);
 		model = getEntity()->get_component<Transform>()->model();
