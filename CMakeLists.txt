@@ -44,6 +44,7 @@ add_library(bolt
   src/bolt/Model.h
   src/bolt/Transform.h src/bolt/Transform.cpp
   src/bolt/Keyboard.h src/bolt/Keyboard.cpp
+  src/bolt/Shader.h src/bolt/Shader.cpp
 )
 
 target_link_libraries(bolt rend)

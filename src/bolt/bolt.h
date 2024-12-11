@@ -7,5 +7,7 @@
 #include "TriangleRenderer.h"
 #include "Transform.h"
 #include "Keyboard.h"
+#include "Texture.h"
+#include "Resources.h"
 
 #endif // !BOLT_BOLT_H

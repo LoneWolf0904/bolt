@@ -2,8 +2,8 @@
 
 namespace bolt
 {
-	/*void Texture::onLoad()
+	void Texture::onLoad()
 	{
-		m_texture = std::make_shared<rend::Texture>(getpath() + ".png");
-	}*/
+		m_texture = std::make_shared<rend::Texture>(std::string(getPath() + ".png").c_str());
+	}
 }

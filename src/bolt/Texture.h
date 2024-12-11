@@ -4,13 +4,14 @@
 
 namespace bolt
 {
-	struct Resource;
+	struct TriangleRenderer;
 
 	struct Texture : Resource
 	{
 		void onLoad();
 
 	private:
+		friend struct bolt::TriangleRenderer;
 		std::shared_ptr<rend::Texture> m_texture;
 	};
 }

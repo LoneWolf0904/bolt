@@ -3,6 +3,7 @@
 #include "Window.h"
 #include "Transform.h"
 #include "Keyboard.h"
+#include "Resources.h"
 #include <iostream>
 
 struct window;
@@ -14,6 +15,7 @@ namespace bolt
 		std::shared_ptr<Core> rtn = std::make_shared<Core>();
 		rtn->m_window = std::make_shared<Window>();
 		rtn->m_keyboard = std::make_shared<Keyboard>();
+		rtn->m_resources = std::make_shared<Resources>();
 		rtn->m_self = rtn;
 		return rtn;
 	}
@@ -94,5 +96,10 @@ namespace bolt
 	std::shared_ptr<Keyboard> Core::getKeyboard()
 	{
 		return m_keyboard;
+	}
+
+	std::shared_ptr<Resources> Core::get_resources()
+	{
+		return m_resources;
 	}
 }

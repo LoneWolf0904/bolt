@@ -35,7 +35,8 @@ int main()
 	
 
 	std::shared_ptr<Entity> ent = core->add_entity();
-	ent->add_component<TriangleRenderer>();
+	std::shared_ptr<TriangleRenderer> tr = ent->add_component<TriangleRenderer>();
+	tr->set_texture(core->get_resources()->load<Texture>("textures/cat"));
 	ent->get_component<Transform>()->setPosition(rend::vec3(0, 0, -10));
 	ent->get_component<Transform>()->setScale(rend::vec3(5.0f));
 
