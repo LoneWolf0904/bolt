@@ -1,11 +1,12 @@
 #include "TriangleRenderer.h"
 #include "Entity.h"
-#include "Transform.h"#
+#include "Transform.h"
 #include "Texture.h"
 #include <stdexcept>
 
 namespace bolt
 {
+
 	void TriangleRenderer::on_render()
 	{
 		//printf("Rendering\n");

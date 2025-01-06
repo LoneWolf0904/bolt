@@ -9,6 +9,7 @@ include_directories(
 	contrib/cl-windows-x86_64/include
 )
 
+
 link_directories(
 	contrib/cl-windows-x86_64/lib
 )
@@ -45,6 +46,7 @@ add_library(bolt
   src/bolt/Transform.h src/bolt/Transform.cpp
   src/bolt/Keyboard.h src/bolt/Keyboard.cpp
   src/bolt/Shader.h src/bolt/Shader.cpp
+  src/bolt/SoundSource.h src/bolt/SoundSource.cpp
 )
 
 target_link_libraries(bolt rend)
@@ -55,3 +57,4 @@ add_executable(demo
 )
 
 target_link_libraries(demo bolt)
+target_link_libraries(demo openal32)

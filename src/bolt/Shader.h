@@ -4,6 +4,13 @@
 
 namespace bolt
 {
-	void onLoad();
+	struct Shader : Resource
+	{
+		void onLoad();
+
+	private:
+		std::shared_ptr<rend::Shader> m_shader;
+	};
+	
 
 }

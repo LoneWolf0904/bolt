@@ -1,5 +1,8 @@
 #include <memory>
 #include <vector>
+#include <AL/al.h>
+#include <AL/alc.h>
+//#include "stb_vorbis.c"
 
 namespace bolt
 {

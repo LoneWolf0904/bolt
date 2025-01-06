@@ -2,6 +2,7 @@
 #include "Component.h"
 #include <rend/rend.h>
 
+
 namespace bolt
 {
 	struct Transform : Component

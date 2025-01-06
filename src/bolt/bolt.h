@@ -9,5 +9,6 @@
 #include "Keyboard.h"
 #include "Texture.h"
 #include "Resources.h"
+#include "SoundSource.h"
 
 #endif // !BOLT_BOLT_H
