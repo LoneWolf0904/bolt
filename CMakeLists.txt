@@ -47,6 +47,7 @@ add_library(bolt
   src/bolt/Keyboard.h src/bolt/Keyboard.cpp
   src/bolt/Shader.h src/bolt/Shader.cpp
   src/bolt/SoundSource.h src/bolt/SoundSource.cpp
+  src/bolt/BoxCollider.h src/bolt/BoxCollider.cpp
 )
 
 target_link_libraries(bolt rend)

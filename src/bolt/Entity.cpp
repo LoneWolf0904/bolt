@@ -1,5 +1,6 @@
 #include "Entity.h"
 #include "Component.h"
+#include "Transform.h"
 
 namespace bolt
 {
@@ -22,5 +23,10 @@ namespace bolt
 	std::shared_ptr<Core> Entity::getCore()
 	{
 		return m_core.lock();
+	}
+
+	std::shared_ptr<Transform> Entity::getTransform()
+	{
+		return m_transform;
 	}
 }

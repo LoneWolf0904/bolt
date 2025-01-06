@@ -26,6 +26,7 @@ namespace bolt
 		std::weak_ptr<Core> m_self;
 		std::shared_ptr<Keyboard> m_keyboard;
 		std::shared_ptr<Resources> m_resources;
+		
 
 		bool m_running;
 	};

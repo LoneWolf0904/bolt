@@ -33,7 +33,6 @@ int main()
 
 	std::shared_ptr<Core> core = Core::initialize();
 	
-
 	std::shared_ptr<Entity> ent = core->add_entity();
 	std::shared_ptr<TriangleRenderer> tr = ent->add_component<TriangleRenderer>();
 	ent->add_component<SoundSource>();
