@@ -6,8 +6,8 @@ namespace bolt
 {
 	bool BoxCollider::colliding(BoxCollider& _other)
 	{
-		rend::vec3 a = getEntity()->getTransform()->getPosition();
-		rend::vec3 b = _other.getEntity()->getTransform()->getPosition();
+		rend::vec3 a = getEntity()->get_component<Transform>()->getPosition();
+		rend::vec3 b = _other.getEntity()->get_component<Transform>()->getPosition();
 		rend::vec3 ahs = m_size / 2.0f;
 		rend::vec3 bhs = _other.m_size / 2.0f;
 

@@ -34,15 +34,17 @@ namespace bolt
 			throw std::runtime_error("Failed to find component");
 		}
 
+		
+
 		std::shared_ptr<Core> getCore();
-		std::shared_ptr<Transform> getTransform();
+		//std::shared_ptr<Transform> getTransform();
 
 	private:
 		friend struct bolt::Core;
 		std::weak_ptr<Core> m_core;
 		std::weak_ptr<Entity>m_self;
 		std::vector<std::shared_ptr<Component> > m_components;
-		std::shared_ptr<Transform> m_transform;
+		//std::shared_ptr<Transform> m_transform;
 
 		void tick();
 		void render();
