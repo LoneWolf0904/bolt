@@ -4,11 +4,13 @@
 
 namespace bolt
 {
+	struct Renderer;
 	struct Model : Resource
 	{
 		void onLoad();
 
 	private:
+		friend struct bolt::Renderer;
 		std::shared_ptr<rend::Model> m_model;
 	};
 }

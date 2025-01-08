@@ -42,13 +42,14 @@ add_library(bolt
   src/bolt/Resource.cpp src/bolt/Resource.h
   src/bolt/Resources.cpp src/bolt/Resources.h
   src/bolt/Texture.h src/bolt/Texture.cpp
-  src/bolt/Model.h
+  src/bolt/Model.h src/bolt/Model.cpp
   src/bolt/Transform.h src/bolt/Transform.cpp
   src/bolt/Keyboard.h src/bolt/Keyboard.cpp
   src/bolt/Shader.h src/bolt/Shader.cpp
   src/bolt/SoundSource.h src/bolt/SoundSource.cpp
   src/bolt/BoxCollider.h src/bolt/BoxCollider.cpp
   src/bolt/RigidBody.h src/bolt/RigidBody.cpp
+  src/bolt/Renderer.h src/bolt/Renderer.cpp
 )
 
 target_link_libraries(bolt rend)

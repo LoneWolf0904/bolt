@@ -1,8 +1,9 @@
+
 #include <iostream>
-#include "Component.h"
 #include "rend/rend.h"
 #include <vector>
 #include <memory>
+#include "bolt.h"
 
 namespace bolt
 {
@@ -13,3 +14,4 @@ namespace bolt
 
 	};
 }
+
