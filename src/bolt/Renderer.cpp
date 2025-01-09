@@ -29,7 +29,7 @@ namespace bolt
 
 	void Renderer::onInitialize()
 	{
-		m_mesh = getEntity()->getCore()->get_resources()->load<Model>("models/default");
+		m_mesh = getEntity()->getCore()->get_resources()->load<Model>("textures/curuthers/curuthers");
 	}
 
 	void Renderer::setShader(std::shared_ptr<Shader> shader)
