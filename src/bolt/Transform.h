@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include "Component.h"
 #include <rend/rend.h>

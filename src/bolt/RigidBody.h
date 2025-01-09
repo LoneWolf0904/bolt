@@ -1,12 +1,19 @@
-
+//#include "bolt.h"
 #include <iostream>
 #include "rend/rend.h"
 #include <vector>
 #include <memory>
-#include "bolt.h"
+#include "Component.h"
+//#include "Transform.h"
+//#include "BoxCollider.h"
+
 
 namespace bolt
 {
+	//struct Component;
+	struct BoxCollider;
+	//struct Entity;
+	struct Transform;
 	struct RigidBody : Component
 	{
 		void onTick();

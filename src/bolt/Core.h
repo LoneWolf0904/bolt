@@ -1,3 +1,4 @@
+//#include "bolt.h"
 #include <memory>
 #include <vector>
 #include <AL/al.h>
@@ -17,9 +18,9 @@ namespace bolt
 		void find(std::vector<std::shared_ptr<T> >& _out)
 		{
 			// Go through each entity in core
-			for (size _t ei = 0; ei < m_entity.size(); ++ei)
+			for (size_t ei = 0; ei < m_entities.size(); ++ei)
 			{
-				std::shared_ptr<Entity> e = m_entity.at(ei);
+				std::shared_ptr<Entity> e = m_entities.at(ei);
 
 				// Go through each Component in Entity
 				for (size_t ci = 0; ci < e->m_components.size(); ++ci)

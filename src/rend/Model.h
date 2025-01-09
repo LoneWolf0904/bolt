@@ -1,3 +1,4 @@
+
 #include "rendmath.h"
 #include "Buffer.h"
 #include "Mesh.h"
@@ -70,14 +71,18 @@ struct Model : sys::base
 
   sys::linked_list<Material>::iterator materials_begin();
   sys::linked_list<Material>::iterator materials_end();
+  Mesh* getMesh();
 
   vec3 size() const;
   int parts() const;
+
+ 
 
 private:
   sys::linked_list<TextureInfo> m_textures;
   sys::linked_list<Material> m_materials;
   sys::linked_list<Part> m_parts;
+  sys::ptr<MaterialGroup> material_group;
 
   vec3 m_center;
   vec3 m_size;

@@ -3,6 +3,7 @@
 
 #pragma once
 #include "Core.h"
+#include "Window.h"
 #include "Entity.h"
 #include "Component.h"
 #include "TriangleRenderer.h"
@@ -11,9 +12,11 @@
 #include "Keyboard.h"
 #include "Texture.h"
 #include "Shader.h"
+#include "Resource.h"
 #include "Resources.h"
 #include "SoundSource.h"
 #include "BoxCollider.h"
 #include "RigidBody.h"
+#include "Model.h"
 
 #endif // !BOLT_BOLT_H

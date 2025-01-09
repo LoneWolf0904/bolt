@@ -1,5 +1,9 @@
+//#include "bolt.h"
 #include "RigidBody.h"
-//#include "Entity.h"
+#include "Entity.h"
+#include "BoxCollider.h"
+#include "Core.h"
+#include "Transform.h"
 #include <vector>
 namespace bolt
 {

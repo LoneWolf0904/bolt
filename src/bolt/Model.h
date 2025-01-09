@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include "Resource.h"
 #include <rend/rend.h>
@@ -10,7 +11,7 @@ namespace bolt
 		void onLoad();
 
 	private:
-		friend struct bolt::Renderer;
+		friend struct Renderer;
 		std::shared_ptr<rend::Model> m_model;
 	};
 }

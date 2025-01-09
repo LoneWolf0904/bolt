@@ -297,6 +297,7 @@ void Model::process_obj(const sys::vector<sys::string>& _lines, const sys::strin
       sys::string dirPath(dirname(_path));
       process_mtl(dirPath + tokens[1]);
     }
+
   }
 
   /* Find sizes and centers */
@@ -335,6 +336,8 @@ void Model::process_obj(const sys::vector<sys::string>& _lines, const sys::strin
 
   m_center = (minpos + maxpos) / 2.0f;
   m_size = maxpos - minpos;
+
+  material_group = mg;
 }
 
 void Model::load(const sys::vector<unsigned char>& _data)
@@ -420,6 +423,13 @@ int Model::parts() const
   }
 
   return rtn;
+}
+
+Mesh* Model::getMesh()
+{
+    Mesh* mesh1 = new Mesh;
+    *mesh1 = material_group->mesh;
+    return mesh1;
 }
 
 }
