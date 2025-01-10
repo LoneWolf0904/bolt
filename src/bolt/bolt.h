@@ -18,5 +18,6 @@
 #include "BoxCollider.h"
 #include "RigidBody.h"
 #include "Model.h"
+#include "Mesh.h"
 
 #endif // !BOLT_BOLT_H

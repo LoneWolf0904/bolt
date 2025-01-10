@@ -20,6 +20,14 @@ namespace bolt
 		}
 	}
 
+	void Entity::gui()
+	{
+		for (size_t ci = 0; ci < m_components.size(); ++ci)
+		{
+			m_components.at(ci)->gui();
+		}
+	}
+
 	std::shared_ptr<Core> Entity::getCore()
 	{
 		return m_core.lock();

@@ -50,6 +50,8 @@ add_library(bolt
   src/bolt/BoxCollider.h src/bolt/BoxCollider.cpp
   src/bolt/RigidBody.h src/bolt/RigidBody.cpp
   src/bolt/Renderer.h src/bolt/Renderer.cpp
+  src/bolt/GUI.h src/bolt/GUI.cpp
+  src/bolt/Mesh.h src/bolt/Mesh.cpp
 )
 
 target_link_libraries(bolt rend)

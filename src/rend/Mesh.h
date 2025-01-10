@@ -13,9 +13,9 @@ namespace rend
 enum MeshType
 {
   TRIANGLE_MESH = 0,
-  QUAD_MESH,
-  GUI_QUAD_MESH,
-  NDC_QUAD_MESH
+  QUAD_MESH = 1,
+  GUI_QUAD_MESH = 2,
+  NDC_QUAD_MESH = 3
 };
 
 struct Vertex

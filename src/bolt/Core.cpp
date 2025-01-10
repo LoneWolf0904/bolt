@@ -119,6 +119,11 @@ namespace bolt
 				m_entities.at(ei)->render();
 			}
 
+			for (size_t ei = 0; ei < m_entities.size(); ++ei)
+			{
+				m_entities.at(ei)->gui();
+			}
+
 			m_keyboard->pressedKeys.clear();
 			m_keyboard->releasedKeys.clear();
 			SDL_Rend_SwapWindow(m_window->m_raw);

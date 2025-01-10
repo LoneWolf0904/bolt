@@ -20,6 +20,13 @@ struct Test : Component
 		}
 	}
 
+	//void on_gui()
+	//{
+	//	rend::mat4 ortho = rend::ortho(0.0f, 800.0f, 0.0f, 600.0f);
+	//	rend::mat4 model = rend::translate(rend::mat4(1.0f), rend::vec3(0.0f, 0.0f, 0.0f));
+	//	rend::vec3 mesh = getEntity()->getCore()->get_resources()->load<Mesh>();
+	//}
+
 	/*void on_render()
 	{
 		printf("Player::render\n");

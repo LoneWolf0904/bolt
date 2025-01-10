@@ -6,6 +6,7 @@
 #include "Core.h"
 #include "Resources.h"
 #include "Shader.h"
+#include "Mesh.h"
 
 namespace bolt
 {
@@ -19,8 +20,8 @@ namespace bolt
 		rend::mat4 model(1.0f);
 
 		model = getEntity()->get_component<Transform>()->model();
-		m_shader->m_shader->attribute("a_Position", *m_mesh->m_model->getMesh()->positions());
-		m_shader->m_shader->attribute("a_TexCoord", *m_mesh->m_model->getMesh()->texcoords());
+		m_shader->m_shader->attribute("a_Position", *m_model->m_model->getMesh()->positions());
+		m_shader->m_shader->attribute("a_TexCoord", *m_model->m_model->getMesh()->texcoords());
 		m_shader->m_shader->uniform("u_Projection", rend::perspective(45.0f, 1.0f, 0.1f, 100.0f));
 		m_shader->m_shader->uniform("u_Model", model);
 		m_shader->m_shader->uniform("u_Texture", *m_texture->m_texture);
@@ -29,7 +30,7 @@ namespace bolt
 
 	void Renderer::onInitialize()
 	{
-		m_mesh = getEntity()->getCore()->get_resources()->load<Model>("textures/curuthers/curuthers");
+		m_model = getEntity()->getCore()->get_resources()->load<Model>("textures/curuthers/curuthers");
 	}
 
 	void Renderer::setShader(std::shared_ptr<Shader> shader)
@@ -39,11 +40,18 @@ namespace bolt
 
 	void Renderer::setModel(std::shared_ptr<Model> model)
 	{
-		m_mesh = model;
+		m_model = model;
+	}
+
+	void Renderer::setMesh(std::shared_ptr<Mesh> mesh)
+	{
+		m_mesh = mesh;
 	}
 
 	void Renderer::setTexture(std::shared_ptr<Texture> texture)
 	{
 		m_texture = texture;
 	}
+
+
 }

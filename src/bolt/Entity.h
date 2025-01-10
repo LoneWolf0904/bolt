@@ -49,6 +49,7 @@ namespace bolt
 
 		void tick();
 		void render();
+		void gui();
 		
 	};
 }

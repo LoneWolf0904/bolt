@@ -5,6 +5,7 @@ namespace bolt
 	void Component::on_initialize(){}
 	void Component::on_tick(){}
 	void Component::on_render(){}
+	void Component::on_gui(){}
 
 	std::shared_ptr<Entity> Component::getEntity()
 	{
@@ -19,5 +20,10 @@ namespace bolt
 	void Component::render()
 	{
 		on_render();
+	}
+
+	void Component::gui()
+	{
+		on_gui();
 	}
 }
