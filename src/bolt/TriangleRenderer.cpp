@@ -26,7 +26,7 @@ namespace bolt
 
 	void TriangleRenderer::on_initialize()
 	{
-		m_mesh = rend::Mesh(rend::TRIANGLE_MESH);
+		m_mesh = rend::Mesh(rend::QUAD_MESH);
 
 
 	}

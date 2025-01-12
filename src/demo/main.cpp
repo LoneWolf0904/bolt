@@ -52,10 +52,10 @@ int main()
 	std::shared_ptr<Renderer> _render = ent3->add_component<Renderer>();
 	_render->onInitialize();
 	_render->setTexture(core->get_resources()->load<Texture>("textures/curuthers/Whiskers_diffuse"));
-	_render->setShader(core->get_resources()->load<Shader>("TEXTURE_SHADER"));
+	_render->setShader(core->get_resources()->load<Shader>(""));
 	_render->setModel(core->get_resources()->load<Model>("textures/curuthers/curuthers"));
-	ent3->get_component<Transform>()->setPosition(rend::vec3(0, 0, -15));
-	ent3->get_component<Transform>()->setScale(rend::vec3(5.0f));
+	ent3->get_component<Transform>()->setPosition(rend::vec3(0, 0, -5));
+	ent3->get_component<Transform>()->setScale(rend::vec3(0.2f));
 
 
 	std::shared_ptr<Entity> ent1 = core->add_entity();
