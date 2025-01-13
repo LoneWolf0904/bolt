@@ -17,15 +17,17 @@ struct Test : Component
 		if (getEntity()->getCore()->getKeyboard()->isKeyPressed(SDLK_a))
 		{
 			std::cout << "A is pressed" << std::endl;
+			
 		}
 	}
 
-	//void on_gui()
-	//{
-	//	rend::mat4 ortho = rend::ortho(0.0f, 800.0f, 0.0f, 600.0f);
-	//	rend::mat4 model = rend::translate(rend::mat4(1.0f), rend::vec3(0.0f, 0.0f, 0.0f));
-	//	rend::vec3 mesh = getEntity()->getCore()->get_resources()->load<Mesh>();
-	//}
+	void on_gui()
+	{
+		rend::mat4 ortho = rend::ortho(0.0f, 800.0f, 0.0f, 600.0f);
+		rend::mat4 model = rend::translate(rend::mat4(1.0f), rend::vec3(1.0f, 0.0f, 0.0f));
+		rend::Mesh m_mesh = rend::Mesh(rend::GUI_QUAD_MESH);
+		rend::Shader m_shader = rend::Shader(rend::TEXTURE_SHADER);
+	}
 
 	/*void on_render()
 	{
@@ -55,7 +57,7 @@ int main()
 	_render->setShader(core->get_resources()->load<Shader>(""));
 	_render->setModel(core->get_resources()->load<Model>("textures/curuthers/curuthers"));
 	ent3->get_component<Transform>()->setPosition(rend::vec3(0, 0, -5));
-	ent3->get_component<Transform>()->setScale(rend::vec3(0.2f));
+	ent3->get_component<Transform>()->setScale(rend::vec3(5.0f));
 
 
 	std::shared_ptr<Entity> ent1 = core->add_entity();
