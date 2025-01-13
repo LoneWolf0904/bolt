@@ -13,7 +13,7 @@ namespace bolt
 
 	private:
 		friend struct Renderer;
-		std::shared_ptr<rend::Shader> m_shader;
+		std::shared_ptr<rend::ModelShader> m_shader;
 		//rend::Shader m_shader;
 	};
 	

@@ -18,7 +18,7 @@ namespace bolt
 		void setMesh(std::shared_ptr<Mesh> mesh);
 
 	private:
-		void onDisplay();
+		void on_render();
 
 		std::shared_ptr<Texture> m_texture;
 		std::shared_ptr<Shader> m_shader;

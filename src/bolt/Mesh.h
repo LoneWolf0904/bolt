@@ -13,6 +13,5 @@ namespace bolt
 	private:
 		friend struct Renderer;
 		std::shared_ptr<rend::Mesh> m_mesh;
-		int meshtype;
 	};
 }

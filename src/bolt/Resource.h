@@ -6,7 +6,7 @@ namespace bolt
 {
 	struct Resource
 	{
-		virtual void onLoad() = 0;
+		virtual void onLoad() {};
 		std::string getPath() const;
 
 	private:

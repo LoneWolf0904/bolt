@@ -1,4 +1,7 @@
 #include "SoundSource.h"
+#include "Entity.h"
+#include "Core.h"
+#include "Transform.h"
 #include <STB/stb_vorbis.c>
 
 namespace bolt
@@ -38,7 +41,7 @@ namespace bolt
 
 	void SoundSource::on_tick()
 	{
-		alSource3f(sourceId, AL_POSITION, 0, 0, 0);
+		alSource3f(sourceId, AL_POSITION, getEntity()->get_component<Transform>()->getPosition().x, getEntity()->get_component<Transform>()->getPosition().y, getEntity()->get_component<Transform>()->getPosition().z);
 	}
 
 	void SoundSource::load_ogg(const std::string& _path, std::vector<unsigned char>& _buffer, ALenum& _format, ALsizei& _freq)

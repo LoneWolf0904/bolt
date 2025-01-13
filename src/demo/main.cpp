@@ -42,22 +42,23 @@ int main()
 
 	std::shared_ptr<Core> core = Core::initialize();
 	
-	std::shared_ptr<Entity> ent = core->add_entity();
-	std::shared_ptr<TriangleRenderer> tr = ent->add_component<TriangleRenderer>();
-	//std::shared_ptr<Renderer> _render = ent->add_component<Renderer>();
-	ent->add_component<SoundSource>();
-	tr->set_texture(core->get_resources()->load<Texture>("textures/cat"));
-	ent->get_component<Transform>()->setPosition(rend::vec3(0, 0, -10));
-	ent->get_component<Transform>()->setScale(rend::vec3(5.0f));
+	//std::shared_ptr<Entity> ent = core->add_entity();
+	//std::shared_ptr<TriangleRenderer> tr = ent->add_component<TriangleRenderer>();
+	////std::shared_ptr<Renderer> _render = ent->add_component<Renderer>();
+	//ent->add_component<SoundSource>();
+	//tr->set_texture(core->get_resources()->load<Texture>("textures/cat"));
+	//ent->get_component<Transform>()->setPosition(rend::vec3(0, 0, -10));
+	//ent->get_component<Transform>()->setScale(rend::vec3(5.0f));
 
 	std::shared_ptr<Entity> ent3 = core->add_entity();
 	std::shared_ptr<Renderer> _render = ent3->add_component<Renderer>();
 	_render->onInitialize();
 	_render->setTexture(core->get_resources()->load<Texture>("textures/curuthers/Whiskers_diffuse"));
-	_render->setShader(core->get_resources()->load<Shader>(""));
+	_render->setShader(core->get_resources()->load<Shader>("assets/shaders/basic"));
 	_render->setModel(core->get_resources()->load<Model>("textures/curuthers/curuthers"));
-	ent3->get_component<Transform>()->setPosition(rend::vec3(0, 0, -5));
-	ent3->get_component<Transform>()->setScale(rend::vec3(5.0f));
+	ent3->get_component<Transform>()->setPosition(rend::vec3(0, 0, -3));
+	ent3->get_component<Transform>()->setScale(rend::vec3(1.0f));
+	ent3->get_component<Transform>()->setRotation(rend::vec3(0, 0, 0));
 
 
 	std::shared_ptr<Entity> ent1 = core->add_entity();
