@@ -10,7 +10,6 @@ namespace bolt
 		// TODO: Rotation
 		rtn = rend::rotate_xyz(rtn, m_rotation);
 		rtn = rend::scale(rtn, m_scale);
-
 		return rtn;
 	}
 }

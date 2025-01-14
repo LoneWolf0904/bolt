@@ -13,6 +13,9 @@ struct Test : Component
 //
 	void on_tick()
 	{
+		std::shared_ptr<Transform> transform = getEntity()->get_component<Transform>();
+		rend::vec3 currentPosition = transform->getRotation();
+
 		//printf("Player::tick\n");
 		if (getEntity()->getCore()->getKeyboard()->isKeyPressed(SDLK_a))
 		{
@@ -23,13 +26,14 @@ struct Test : Component
 
 		if (getEntity()->getCore()->getKeyboard()->isKey(SDLK_a))
 		{
-			getEntity()->get_component<Transform>()->setRotation(rend::vec3(0, getEntity()->get_component<Transform>()->getRotation().y - 10.0f, 0));
+			transform->setRotation(rend::vec3( 0, 0, currentPosition.z - 10.0f ));
+			
 		}
 
 
 		if (getEntity()->getCore()->getKeyboard()->isKey(SDLK_d))
 		{
-			getEntity()->get_component<Transform>()->setRotation(rend::vec3(0, getEntity()->get_component<Transform>()->getRotation().y + 10.0f, 0));
+			transform->setRotation(rend::vec3(0, 0, currentPosition.z + 10.0f));
 		}
 	}
 
@@ -77,9 +81,22 @@ int main()
 	_render->setShader(core->get_resources()->load<Shader>("assets/shaders/basic"));
 	_render->setModel(core->get_resources()->load<Model>("textures/curuthers/curuthers"));
 	ent3->get_component<Transform>()->setPosition(rend::vec3(0, 0, -10));
-	ent3->get_component<Transform>()->setScale(rend::vec3(1.0f));
 	ent3->get_component<Transform>()->setRotation(rend::vec3(0, 0, 0));
+	ent3->get_component<Transform>()->setScale(rend::vec3(1.0f));
 	ent3->add_component<RigidBody>();
+
+	std::shared_ptr<Entity> ent4 = core->add_entity();
+	std::shared_ptr<Renderer> _render1 = ent4->add_component<Renderer>();
+	std::shared_ptr<BoxCollider> bc1 = ent4->add_component<BoxCollider>();
+	bc1->setSize(rend::vec3(1, 1, 1));
+	_render1->onInitialize();
+	_render1->setTexture(core->get_resources()->load<Texture>("textures/curuthers/Whiskers_diffuse"));
+	_render1->setShader(core->get_resources()->load<Shader>("assets/shaders/basic"));
+	_render1->setModel(core->get_resources()->load<Model>("textures/curuthers/curuthers"));
+	ent4->get_component<Transform>()->setPosition(rend::vec3(3, 0, -10));
+	ent4->get_component<Transform>()->setRotation(rend::vec3(0, -90, 0));
+	ent4->get_component<Transform>()->setScale(rend::vec3(1.0f));
+	ent4->add_component<RigidBody>();
 
 
 	//std::shared_ptr<Entity> ent1 = core->add_entity();

@@ -21,8 +21,8 @@ namespace bolt
 		rend::vec3 getRotation() { return m_rotation; }
 
  	private:
-		rend::vec3 m_position;
-		rend::vec3 m_rotation;
-		rend::vec3 m_scale;
+		rend::vec3 m_position = rend::vec3(0);
+		rend::vec3 m_rotation = rend::vec3(0);
+		rend::vec3 m_scale = rend::vec3(0);
 	};
 }

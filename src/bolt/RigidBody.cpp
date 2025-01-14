@@ -30,30 +30,36 @@ namespace bolt
 				while (true)
 				{
 					if (!colliders[i]->colliding(*this->getEntity()->get_component<BoxCollider>())) break;
-					m_pos->x += _amount;
+					getEntity()->get_component<Transform>()->setPosition(rend::vec3{ getEntity()->get_component<Transform>()->getPosition().x + _amount,
+						getEntity()->get_component<Transform>()->getPosition().y, getEntity()->get_component<Transform>()->getPosition().z });
 
 					if (!colliders[i]->colliding(*this->getEntity()->get_component<BoxCollider>())) break;
-					m_pos->x -= _amount;
-					m_pos->x -= _amount;
+					getEntity()->get_component<Transform>()->setPosition(rend::vec3{ getEntity()->get_component<Transform>()->getPosition().x - (_amount * 2),
+						getEntity()->get_component<Transform>()->getPosition().y, getEntity()->get_component<Transform>()->getPosition().z });
 
 					if (!colliders[i]->colliding(*this->getEntity()->get_component<BoxCollider>())) break;
-					m_pos->x += _amount;
-					m_pos->z += _amount;
+					getEntity()->get_component<Transform>()->setPosition(rend::vec3{ getEntity()->get_component<Transform>()->getPosition().x + _amount,
+						getEntity()->get_component<Transform>()->getPosition().y, getEntity()->get_component<Transform>()->getPosition().z });
+					getEntity()->get_component<Transform>()->setPosition(rend::vec3{ getEntity()->get_component<Transform>()->getPosition().x,
+						getEntity()->get_component<Transform>()->getPosition().y, getEntity()->get_component<Transform>()->getPosition().z + _amount });
 
 					if (!colliders[i]->colliding(*this->getEntity()->get_component<BoxCollider>())) break;
-					m_pos->z -= _amount;
-					m_pos->z -= _amount;
+					getEntity()->get_component<Transform>()->setPosition(rend::vec3{ getEntity()->get_component<Transform>()->getPosition().x,
+						getEntity()->get_component<Transform>()->getPosition().y, getEntity()->get_component<Transform>()->getPosition().z - (_amount * 2) });
 
 					if (!colliders[i]->colliding(*this->getEntity()->get_component<BoxCollider>())) break;
-					m_pos->z += _amount;
-					m_pos->y += _amount;
+					getEntity()->get_component<Transform>()->setPosition(rend::vec3{ getEntity()->get_component<Transform>()->getPosition().x,
+						getEntity()->get_component<Transform>()->getPosition().y, getEntity()->get_component<Transform>()->getPosition().z + _amount });
+					getEntity()->get_component<Transform>()->setPosition(rend::vec3{ getEntity()->get_component<Transform>()->getPosition().x,
+						getEntity()->get_component<Transform>()->getPosition().y + _amount, getEntity()->get_component<Transform>()->getPosition().z});
 
 					if (!colliders[i]->colliding(*this->getEntity()->get_component<BoxCollider>())) break;
-					m_pos->y -= _amount;
-					m_pos->y -= _amount;
+					getEntity()->get_component<Transform>()->setPosition(rend::vec3{ getEntity()->get_component<Transform>()->getPosition().x,
+						getEntity()->get_component<Transform>()->getPosition().y - (_amount * 2), getEntity()->get_component<Transform>()->getPosition().z });
 
 					if (!colliders[i]->colliding(*this->getEntity()->get_component<BoxCollider>())) break;
-					m_pos->y += _amount;
+					getEntity()->get_component<Transform>()->setPosition(rend::vec3{ getEntity()->get_component<Transform>()->getPosition().x,
+						getEntity()->get_component<Transform>()->getPosition().y + _amount, getEntity()->get_component<Transform>()->getPosition().z });
 					_amount += step;
 				}
 			}
