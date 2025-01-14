@@ -46,12 +46,14 @@ namespace bolt
 		void update();
 		std::shared_ptr<Keyboard> getKeyboard();
 		std::shared_ptr<Resources> get_resources();
+		// getgui
 	private:
 		std::shared_ptr<Window> m_window;
 		std::vector<std::shared_ptr<Entity> > m_entities;
 		std::weak_ptr<Core> m_self;
 		std::shared_ptr<Keyboard> m_keyboard;
 		std::shared_ptr<Resources> m_resources;
+		//std::shared_ptr<Gui> m_gui;
 		
 
 		bool m_running;

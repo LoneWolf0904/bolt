@@ -23,6 +23,7 @@ namespace bolt
 		
 		m_shader->m_shader->projection(rend::perspective(45.0f, 1.0f, 0.1f, 100.0f));
 		m_shader->m_shader->model(model);
+		m_shader->m_shader->model(*m_model->m_model);
 		//m_shader->m_shader->uniform("u_Texture", *m_texture->m_texture);
 		m_shader->m_shader->render();
 	}
