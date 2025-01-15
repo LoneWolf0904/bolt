@@ -139,4 +139,9 @@ namespace bolt
 	{
 		return m_resources;
 	}
+
+	/*std::shared_ptr<GUI> Core::get_gui()
+	{
+		return m_gui;
+	}*/
 }

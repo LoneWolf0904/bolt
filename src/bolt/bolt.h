@@ -19,5 +19,6 @@
 #include "RigidBody.h"
 #include "Model.h"
 #include "Mesh.h"
+#include "GUI.h"
 
 #endif // !BOLT_BOLT_H

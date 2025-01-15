@@ -7,7 +7,7 @@
 #include <vector>
 namespace bolt
 {
-	void bolt::RigidBody::onTick()
+	void bolt::RigidBody::on_tick()
 	{
 		std::vector < std::shared_ptr<BoxCollider> > colliders;
 		getEntity()->getCore()->find<BoxCollider>(colliders);
@@ -24,8 +24,8 @@ namespace bolt
 			if (colliders[i]->colliding(*this->getEntity()->get_component<BoxCollider>()))
 			{
 				//TODO
-				float _amount = 0.1f;
-				float step = 0.1f;
+				float _amount = 0.001f;
+				float step = 0.001f;
 
 				while (true)
 				{

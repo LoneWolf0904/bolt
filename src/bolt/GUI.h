@@ -3,9 +3,9 @@
 
 namespace bolt
 {
-	struct Component;
-	/*struct GUI : 
+	//struct Component;
+	struct GUI
 	{
 
-	};*/
+	};
 }

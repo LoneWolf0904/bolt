@@ -16,7 +16,7 @@ namespace bolt
 	struct Transform;
 	struct RigidBody : Component
 	{
-		void onTick();
+		void on_tick();
 		//std::vector<std::shared_ptr<T> >& _out;
 
 	};
