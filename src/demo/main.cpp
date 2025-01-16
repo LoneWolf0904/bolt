@@ -15,18 +15,33 @@ struct Test : Component
 	{
 		std::shared_ptr<Transform> transform = getEntity()->get_component<Transform>();
 		rend::vec3 currentPosition = transform->getPosition();
+		rend::vec3 currentRotation = transform->getRotation();
 
-		//printf("Player::tick\n");
-		if (getEntity()->getCore()->getKeyboard()->isKeyPressed(SDLK_a))
+		////printf("Player::tick\n");
+		//if (getEntity()->getCore()->getKeyboard()->isKeyPressed(SDLK_a))
+		//{
+		//	std::cout << "A is pressed" << std::endl;
+		//	//getEntity()->get_component<Transform>()->setPosition(rend::vec3(0, 1, 0));
+		//	
+		//}
+
+		if (getEntity()->getCore()->getKeyboard()->isKey(SDLK_w))
 		{
-			std::cout << "A is pressed" << std::endl;
-			//getEntity()->get_component<Transform>()->setPosition(rend::vec3(0, 1, 0));
-			
+			transform->setPosition(rend::vec3(0, 0, currentPosition.z - 0.05f));
+			transform->setRotation(rend::vec3(0, 180, 0));
 		}
+
+		if (getEntity()->getCore()->getKeyboard()->isKey(SDLK_s))
+		{
+			transform->setPosition(rend::vec3(0, 0, currentPosition.z + 0.05f));
+			transform->setRotation(rend::vec3(0, 0, 0));
+		}
+
 
 		if (getEntity()->getCore()->getKeyboard()->isKey(SDLK_a))
 		{
 			transform->setPosition(rend::vec3(currentPosition.x - 0.05f, 0, -10));
+			transform->setRotation(rend::vec3(0, -90, 0));
 			
 		}
 
@@ -34,6 +49,7 @@ struct Test : Component
 		if (getEntity()->getCore()->getKeyboard()->isKey(SDLK_d))
 		{
 			transform->setPosition(rend::vec3(currentPosition.x + 0.05f, 0, -10));
+			transform->setRotation(rend::vec3(0, 90, 0));
 		}
 	}
 
@@ -66,8 +82,8 @@ int main()
 
 	std::shared_ptr<Core> core = Core::initialize();
 	
-	std::shared_ptr<Entity> ent = core->add_entity();
-	/*std::shared_ptr<TriangleRenderer> tr = ent->add_component<TriangleRenderer>();
+	/*std::shared_ptr<Entity> ent = core->add_entity();
+	std::shared_ptr<TriangleRenderer> tr = ent->add_component<TriangleRenderer>();
 	ent->add_component<SoundSource>();
 	tr->set_texture(core->get_resources()->load<Texture>("textures/background"));
 	ent->get_component<Transform>()->setPosition(rend::vec3(0, 0, -25));
@@ -93,10 +109,10 @@ int main()
 	_render1->onInitialize();
 	_render1->setTexture(core->get_resources()->load<Texture>("textures/curuthers/Whiskers_diffuse"));
 	_render1->setShader(core->get_resources()->load<Shader>("assets/shaders/basic"));
-	_render1->setModel(core->get_resources()->load<Model>("textures/curuthers/curuthers"));
+	_render1->setModel(core->get_resources()->load<Model>("models/CaveWalls3"));
 	ent4->get_component<Transform>()->setPosition(rend::vec3(3, 0, -10));
 	ent4->get_component<Transform>()->setRotation(rend::vec3(0, -90, 0));
-	ent4->get_component<Transform>()->setScale(rend::vec3(1.0f));
+	ent4->get_component<Transform>()->setScale(rend::vec3(0.05f));
 	ent4->add_component<RigidBody>();
 
 
