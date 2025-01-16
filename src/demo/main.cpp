@@ -126,7 +126,7 @@ int main()
 	ent5->get_component<Transform>()->setPosition(rend::vec3(-3, 0, -10));
 	ent5->get_component<Transform>()->setRotation(rend::vec3(0, 90, 0));
 	ent5->get_component<Transform>()->setScale(rend::vec3(1.0f));
-	//ent5->add_component<RigidBody>();
+	ent5->add_component<RigidBody>();
 
 
 	//std::shared_ptr<Entity> ent1 = core->add_entity();
