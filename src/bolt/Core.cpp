@@ -82,7 +82,7 @@ namespace bolt
 
 				if (event.type == SDL_KEYDOWN)
 				{
-					sys::out("Event\n");
+					//sys::out("Event\n");
 					//SDL_KeyboardEvent keyEvent = event.key;
 
 					m_keyboard->pressedKeys.push_back(event.key.keysym.sym);
@@ -109,7 +109,7 @@ namespace bolt
 				m_entities.at(ei)->tick();
 			}
 
-			glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+			glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 			//SDL_Rend_ClearWindow(m_window->m_raw);
