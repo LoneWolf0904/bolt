@@ -95,7 +95,7 @@ int main()
 	bc->setSize(rend::vec3(1, 1, 1));
 	_render->onInitialize();
 	_render->setTexture(core->get_resources()->load<Texture>("textures/curuthers/Whiskers_diffuse"));
-	_render->setShader(core->get_resources()->load<Shader>("assets/shaders/basic"));
+	_render->setShader(core->get_resources()->load<Shader>("Shaders/Model2"));
 	_render->setModel(core->get_resources()->load<Model>("textures/curuthers/curuthers"));
 	ent3->get_component<Transform>()->setPosition(rend::vec3(0, 0, -10));
 	ent3->get_component<Transform>()->setRotation(rend::vec3(0, 0, 0));
@@ -108,7 +108,7 @@ int main()
 	bc1->setSize(rend::vec3(1, 1, 1));
 	_render1->onInitialize();
 	_render1->setTexture(core->get_resources()->load<Texture>("textures/curuthers/Whiskers_diffuse"));
-	_render1->setShader(core->get_resources()->load<Shader>("assets/shaders/basic"));
+	_render1->setShader(core->get_resources()->load<Shader>("Shaders/Model2"));
 	_render1->setModel(core->get_resources()->load<Model>("models/CaveWalls3"));
 	ent4->get_component<Transform>()->setPosition(rend::vec3(3, 0, -10));
 	ent4->get_component<Transform>()->setRotation(rend::vec3(0, -90, 0));

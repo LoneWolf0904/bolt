@@ -650,8 +650,12 @@ GLuint Shader::id()
       glGetShaderInfoLog(vsId, log.size(), NULL, &log[0]);
       glDeleteShader(vsId);
 
+      sys::out(source + "\n");
+
       throw Exception("Failed to compile vertex shader ["
         + sys::string(&log[0]) + "]");
+
+
     }
 
     source = "";

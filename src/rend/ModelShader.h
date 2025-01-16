@@ -1,5 +1,6 @@
 #include "Shader.h"
 #include "rendmath.h"
+#include <string>
 
 #include <sys/memory.h>
 
@@ -14,6 +15,8 @@ struct Part;
 struct ModelShader : sys::base
 {
   ModelShader();
+
+  ModelShader(std::string vertpath, std::string fragpath);
 
   void projection(const mat4& _projection);
   mat4 projection() const;

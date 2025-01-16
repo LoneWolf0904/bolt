@@ -3,7 +3,9 @@
 #include "Model.h"
 #include "Mesh.h"
 #include "Animation.h"
-
+#include <iostream>
+#include <stdexcept>
+#include <fstream>
 namespace rend
 {
 
@@ -85,6 +87,49 @@ ModelShader::ModelShader()
   m_shader.uniform("u_Projection", m_projection);
   m_shader.uniform("u_View", m_view);
   m_shader.uniform("u_Model", m_model);
+}
+
+ModelShader::ModelShader(std::string vertpath, std::string fragpath)
+    : m_color(1, 1, 1, 1)
+    , m_projection(1.0f)
+    , m_view(1.0f)
+    , m_model(1.0f)
+    , m_textures(true)
+    , m_lighting(true)
+{
+    std::ifstream vertexfile(vertpath.c_str());
+    if (!vertexfile.is_open())
+    {
+        throw std::runtime_error("failed to open vertex shader!");
+    }
+
+    std::ifstream fragmentfile(fragpath.c_str());
+    if (!fragmentfile.is_open())
+    {
+        throw std::runtime_error("failed to open fragment shader!");
+    }
+
+    std::string vs;
+    std::string fs;
+    std::string line;
+
+    while (std::getline(vertexfile, line))
+    {
+        vs += line + "\n";
+    }
+
+    while (std::getline(fragmentfile, line))
+    {
+        fs += line + "\n";
+    }
+
+    m_shader.load(vs.c_str(), fs.c_str());
+    m_shader.depth_test(true);
+    m_shader.backface_cull(true);
+    
+    m_shader.uniform("u_Projection", m_projection);
+    m_shader.uniform("u_View", m_view);
+    m_shader.uniform("u_Model", m_model);
 }
 
 void ModelShader::projection(const mat4& _projection)
