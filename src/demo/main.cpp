@@ -6,25 +6,14 @@ using namespace bolt;
 struct Test : Component
 
 {
-//	void on_initialize()
-//	{
-//		printf("Player::initialize\n");
-//	}
-//
+
 	void on_tick()
 	{
 		std::shared_ptr<Transform> transform = getEntity()->get_component<Transform>();
 		rend::vec3 currentPosition = transform->getPosition();
 		rend::vec3 currentRotation = transform->getRotation();
 
-		////printf("Player::tick\n");
-		//if (getEntity()->getCore()->getKeyboard()->isKeyPressed(SDLK_a))
-		//{
-		//	std::cout << "A is pressed" << std::endl;
-		//	//getEntity()->get_component<Transform>()->setPosition(rend::vec3(0, 1, 0));
-		//	
-		//}
-
+	
 		if (getEntity()->getCore()->getKeyboard()->isKey(SDLK_w))
 		{
 			transform->setPosition(rend::vec3(currentPosition.x, 0, currentPosition.z - 0.05f));
@@ -89,6 +78,12 @@ int main()
 	ent->get_component<Transform>()->setPosition(rend::vec3(0, 0, -25));
 	ent->get_component<Transform>()->setScale(rend::vec3(30.0f));
 
+	std::shared_ptr<Entity> entControls = core->add_entity();
+	std::shared_ptr<TriangleRenderer> controls = entControls->add_component<TriangleRenderer>();
+	controls->set_texture(core->get_resources()->load<Texture>("textures/WASD"));
+	entControls->get_component<Transform>()->setPosition(rend::vec3(4.5, -4.5, -10));
+	entControls->get_component<Transform>()->setScale(rend::vec3(2.0f));
+
 	std::shared_ptr<Entity> ent3 = core->add_entity();
 	std::shared_ptr<Renderer> _render = ent3->add_component<Renderer>();
 	std::shared_ptr<BoxCollider> bc = ent3->add_component<BoxCollider>();
@@ -127,6 +122,19 @@ int main()
 	ent5->get_component<Transform>()->setRotation(rend::vec3(0, 90, 0));
 	ent5->get_component<Transform>()->setScale(rend::vec3(1.0f));
 	ent5->add_component<RigidBody>();
+
+	std::shared_ptr<Entity> ent6 = core->add_entity();
+	std::shared_ptr<Renderer> _render3 = ent6->add_component<Renderer>();
+	std::shared_ptr<BoxCollider> bc3 = ent6->add_component<BoxCollider>();
+	bc3->setSize(rend::vec3(1, 1, 1));
+	_render3->onInitialize();
+	_render3->setTexture(core->get_resources()->load<Texture>("textures/curuthers/Whiskers_diffuse"));
+	_render3->setShader(core->get_resources()->load<Shader>("Shaders/Model2"));
+	_render3->setModel(core->get_resources()->load<Model>("textures/curuthers/curuthers"));
+	ent6->get_component<Transform>()->setPosition(rend::vec3(0, 0, -15));
+	ent6->get_component<Transform>()->setRotation(rend::vec3(0, 90, 0));
+	ent6->get_component<Transform>()->setScale(rend::vec3(1.0f));
+	//ent6->add_component<RigidBody>();
 
 
 	//std::shared_ptr<Entity> ent1 = core->add_entity();

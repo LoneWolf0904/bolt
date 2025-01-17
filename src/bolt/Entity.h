@@ -9,9 +9,18 @@ namespace bolt
 	struct Core;
 	struct Component;
 
+	/**
+	 * class Entity
+	 * Represents an entity in the game world. Entities can have multiple components attached.
+	 */
 	struct Entity
 	{
-		//static std::shared_ptr<Core> initialize;
+		/**
+		* Adds a component of type T to the entity.
+		* tparam T The type of the component to add.
+		* return A shared pointer to the newly added component.
+		* throws std::runtime_error If the component fails to initialize.
+		*/
 		template <typename T>
 		std::shared_ptr<T> add_component()
 		{
@@ -24,6 +33,12 @@ namespace bolt
 			return rtn;
 		}
 
+		/**
+		* Retrieves a component of type T attached to the entity.
+		* tparam T The type of the component to retrieve.
+		* return A shared pointer to the component.
+		* throws std::runtime_error If the component is not found.
+		*/
 		template <typename T>
 		std::shared_ptr<T> get_component()
 		{
@@ -36,19 +51,29 @@ namespace bolt
 		}
 
 		
-
+		/**
+		* Retrieves the Core instance to which this entity belongs.
+		* return A shared pointer to the Core.
+		*/
 		std::shared_ptr<Core> getCore();
-		//std::shared_ptr<Transform> getTransform();
+		
 
 	private:
-		friend struct bolt::Core;
-		std::weak_ptr<Core> m_core;
-		std::weak_ptr<Entity>m_self;
-		std::vector<std::shared_ptr<Component> > m_components;
-		//std::shared_ptr<Transform> m_transform;
-
+		friend struct bolt::Core; ///< Grants core struct access to its private members
+		std::weak_ptr<Core> m_core; ///< Weak pointer to the Core managing this entity.
+		std::weak_ptr<Entity>m_self; ///< Weak pointer to this entity instance.
+		std::vector<std::shared_ptr<Component> > m_components; ///< List of components attached to this entity.
+		
+		/**
+		 * Internal function to update the entity each frame. Not intended for overriding.
+		 */
 		void tick();
+
+		/**
+		* brief Internal function to render the entity each frame. Not intended for overriding.
+		*/
 		void render();
+
 		void gui();
 		
 	};

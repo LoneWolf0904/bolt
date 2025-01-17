@@ -1,9 +1,11 @@
-//#include "bolt.h"
+/**
+ * file Core.h
+ * Contains the definition of the Core class for the Bolt framework.
+ */
 #include <memory>
 #include <vector>
 #include <AL/al.h>
 #include <AL/alc.h>
-//#include "stb_vorbis.c"
 
 namespace bolt
 {
@@ -11,6 +13,11 @@ namespace bolt
 	struct Entity;
 	struct Window;
 	struct Resources;
+
+	/**
+	* Class Core
+	* Manages the main gameloop, entities, and resources.
+	*/
 
 	struct Core //: std::enable_shared_from_this<Core> junky
 	{
@@ -39,13 +46,18 @@ namespace bolt
 			}
 		}
 
+		/**
+		* Initializes the Core system and returns a shared pointer to it.
+		* 
+		*/
 		static std::shared_ptr<Core> initialize();
-		void start();
-		std::shared_ptr<Entity> add_entity();
-		std::shared_ptr<Window> window() const;
+
+		void start(); ///< starts the main game loop
+		std::shared_ptr<Entity> add_entity(); ///< Adds a new entity to the Core System
+		std::shared_ptr<Window> window() const; ///< Retrieves the main application window
 		void update();
-		std::shared_ptr<Keyboard> getKeyboard();
-		std::shared_ptr<Resources> get_resources();
+		std::shared_ptr<Keyboard> getKeyboard(); ///< Retrieves keyboard instance for input handling
+		std::shared_ptr<Resources> get_resources();	///< Retrieves resources manager for handling resource
 		//std::shared_ptr<GUI> get_gui();
 	private:
 		std::shared_ptr<Window> m_window;
