@@ -2,6 +2,8 @@
 #define BOLT_BOLT_H
 
 #pragma once
+
+// included all the header files
 #include "Core.h"
 #include "Window.h"
 #include "Entity.h"

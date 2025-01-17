@@ -8,6 +8,7 @@ namespace bolt
 	struct Renderer;
 	struct Model : Resource
 	{
+		// called to load the model using the file path
 		void onLoad();
 
 	private:

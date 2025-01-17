@@ -1,4 +1,3 @@
-//#include "bolt.h"
 #include "RigidBody.h"
 #include "Entity.h"
 #include "BoxCollider.h"
@@ -7,26 +6,32 @@
 #include <vector>
 namespace bolt
 {
+	// Called on each tick to handle collisions and to adjust it's position
 	void bolt::RigidBody::on_tick()
 	{
+		// Get all the colliders
 		std::vector < std::shared_ptr<BoxCollider> > colliders;
 		getEntity()->getCore()->find<BoxCollider>(colliders);
 
 		rend::vec3* m_pos = &getEntity()->get_component<Transform>()->getPosition();
 
+		// Iterate over all colliders to check for collisions
 		for (int i = 0; i < colliders.size(); i++)
 		{
+			// Skip collision check with itself
 			if (colliders[i]->getEntity() == getEntity())
 			{
 				continue;
 			}
 
+			// Check if collider is colliding with current entitieas collider
 			if (colliders[i]->colliding(*this->getEntity()->get_component<BoxCollider>()))
 			{
 				//TODO
-				float _amount = 0.001f;
-				float step = 0.001f;
+				float _amount = 0.001f; // amount to move entity
+				float step = 0.001f;	// incremental step for position adjustments
 
+				// Keep adjusting positions until collision is resolved
 				while (true)
 				{
 					if (!colliders[i]->colliding(*this->getEntity()->get_component<BoxCollider>())) break;

@@ -14,7 +14,7 @@ namespace bolt
 		ALenum format = 0;
 		ALsizei freq = 0;
 		std::vector<unsigned char> bufferData;
-		load_ogg("../src/Assets/dixie_horn.ogg", bufferData, format, freq);
+		load_ogg("../Resources/Assets/dixie_horn.ogg", bufferData, format, freq);
 
 		bufferId = 0;
 		alGenBuffers(1, &bufferId);

@@ -6,9 +6,11 @@ namespace bolt
 {
 Window::Window()
 {
+	// Set window width and height
 	int winw = 800;
 	int winh = 600;
 
+	// Create a window
 	m_raw = SDL_CreateWindow("Engine Demo", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 
 		winw, winh, SDL_WINDOW_RESIZABLE | SDL_WINDOW_REND);
 
@@ -28,6 +30,7 @@ Window::Window()
 
 Window::~Window()
 {
+	// Destroy the window
 	SDL_Rend_DeleteContext(m_context);
 	SDL_DestroyWindow(m_raw);
 	SDL_Quit();
