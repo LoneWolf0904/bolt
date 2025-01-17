@@ -62,6 +62,6 @@ namespace bolt
 				return false;
 			}
 		}
-
+		return true;
 	}
 }

@@ -9,6 +9,8 @@ struct Test : Component
 
 	void on_tick()
 	{
+		// Player Controls (WASD)
+
 		std::shared_ptr<Transform> transform = getEntity()->get_component<Transform>();
 		rend::vec3 currentPosition = transform->getPosition();
 		rend::vec3 currentRotation = transform->getRotation();
@@ -42,21 +44,21 @@ struct Test : Component
 		}
 	}
 
-	void on_gui()
-	{
-		/*rend::mat4 ortho = rend::ortho(0.0f, 800.0f, 0.0f, 600.0f);
-		rend::mat4 model = rend::translate(rend::mat4(1.0f), rend::vec3(1.0f, 0.0f, 0.0f));
-		rend::Mesh m_mesh = rend::Mesh(rend::GUI_QUAD_MESH);
-		rend::Shader m_shader = rend::Shader(rend::TEXTURE_SHADER);*/
+	//void on_gui()
+	//{
+	//	/*rend::mat4 ortho = rend::ortho(0.0f, 800.0f, 0.0f, 600.0f);
+	//	rend::mat4 model = rend::translate(rend::mat4(1.0f), rend::vec3(1.0f, 0.0f, 0.0f));
+	//	rend::Mesh m_mesh = rend::Mesh(rend::GUI_QUAD_MESH);
+	//	rend::Shader m_shader = rend::Shader(rend::TEXTURE_SHADER);*/
 
-		//core()->gui()->image(100, 100, 75, 25, core->get_resources()->load<Texture>("textures/cat"));
-		//getEntity()->getCore()->get_gui()
+	//	//core()->gui()->image(100, 100, 75, 25, core->get_resources()->load<Texture>("textures/cat"));
+	//	//getEntity()->getCore()->get_gui()
 
-		//if (core()->gui()->button(100, 100, 75, 25, "Click Me!"))
-		//{
-		//	getEntity()->get_component<Transform>()->setRotation(rend::vec3(0, getEntity()->get_component<Transform>()->getRotation().y + 10.0f, 0));
-		//}
-	}
+	//	//if (core()->gui()->button(100, 100, 75, 25, "Click Me!"))
+	//	//{
+	//	//	getEntity()->get_component<Transform>()->setRotation(rend::vec3(0, getEntity()->get_component<Transform>()->getRotation().y + 10.0f, 0));
+	//	//}
+	//}
 
 	/*void on_render()
 	{
@@ -137,7 +139,6 @@ int main()
 	//ent6->add_component<RigidBody>();
 
 
-	//std::shared_ptr<Entity> ent1 = core->add_entity();
 	ent3->add_component<Test>();
 
 
